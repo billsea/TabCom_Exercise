@@ -21,6 +21,9 @@
 		A9982D3B20C5E44400307F48 /* ExpensesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9982D3920C5E44400307F48 /* ExpensesTableViewController.xib */; };
 		A9982D3F20C5E56000307F48 /* ExpenseDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9982D3D20C5E56000307F48 /* ExpenseDetailTableViewController.m */; };
 		A9982D4020C5E56000307F48 /* ExpenseDetailTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9982D3E20C5E56000307F48 /* ExpenseDetailTableViewController.xib */; };
+		A9982D4420C5F7AD00307F48 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = A9982D4320C5F7AD00307F48 /* Utility.m */; };
+		A9982D4820C5FBB300307F48 /* ExpenseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9982D4620C5FBB300307F48 /* ExpenseTableViewCell.m */; };
+		A9982D4920C5FBB300307F48 /* ExpenseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9982D4720C5FBB300307F48 /* ExpenseTableViewCell.xib */; };
 		D4EE4ABA30C65BADEA5367AD /* libPods-TabCom_Exercise.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D7E01E1CE22D420884772F /* libPods-TabCom_Exercise.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +72,11 @@
 		A9982D3C20C5E56000307F48 /* ExpenseDetailTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpenseDetailTableViewController.h; sourceTree = "<group>"; };
 		A9982D3D20C5E56000307F48 /* ExpenseDetailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExpenseDetailTableViewController.m; sourceTree = "<group>"; };
 		A9982D3E20C5E56000307F48 /* ExpenseDetailTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseDetailTableViewController.xib; sourceTree = "<group>"; };
+		A9982D4220C5F7AD00307F48 /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		A9982D4320C5F7AD00307F48 /* Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		A9982D4520C5FBB300307F48 /* ExpenseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpenseTableViewCell.h; sourceTree = "<group>"; };
+		A9982D4620C5FBB300307F48 /* ExpenseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExpenseTableViewCell.m; sourceTree = "<group>"; };
+		A9982D4720C5FBB300307F48 /* ExpenseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +186,8 @@
 			children = (
 				A9982D3020C5DEE500307F48 /* RequestData.h */,
 				A9982D3120C5DEE500307F48 /* RequestData.m */,
+				A9982D4220C5F7AD00307F48 /* Utility.h */,
+				A9982D4320C5F7AD00307F48 /* Utility.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -206,6 +216,9 @@
 		A9982D4120C5E59800307F48 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				A9982D4520C5FBB300307F48 /* ExpenseTableViewCell.h */,
+				A9982D4620C5FBB300307F48 /* ExpenseTableViewCell.m */,
+				A9982D4720C5FBB300307F48 /* ExpenseTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -320,6 +333,7 @@
 				A9982D3B20C5E44400307F48 /* ExpensesTableViewController.xib in Resources */,
 				A9982D3420C5E0A300307F48 /* Global.h in Resources */,
 				A9957D9320C5D5CE00FB7C3F /* LaunchScreen.storyboard in Resources */,
+				A9982D4920C5FBB300307F48 /* ExpenseTableViewCell.xib in Resources */,
 				A9957D9020C5D5CE00FB7C3F /* Assets.xcassets in Resources */,
 				A9957D8B20C5D5CE00FB7C3F /* Main.storyboard in Resources */,
 				A9982D4020C5E56000307F48 /* ExpenseDetailTableViewController.xib in Resources */,
@@ -369,8 +383,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9957D8E20C5D5CE00FB7C3F /* TabCom_Exercise.xcdatamodeld in Sources */,
+				A9982D4420C5F7AD00307F48 /* Utility.m in Sources */,
 				A9957D9620C5D5CE00FB7C3F /* main.m in Sources */,
 				A9982D3F20C5E56000307F48 /* ExpenseDetailTableViewController.m in Sources */,
+				A9982D4820C5FBB300307F48 /* ExpenseTableViewCell.m in Sources */,
 				A9982D3220C5DEE500307F48 /* RequestData.m in Sources */,
 				A9982D3A20C5E44400307F48 /* ExpensesTableViewController.m in Sources */,
 				A9957D8520C5D5CE00FB7C3F /* AppDelegate.m in Sources */,
