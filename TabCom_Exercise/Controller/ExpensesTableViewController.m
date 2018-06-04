@@ -8,8 +8,13 @@
 
 #import "ExpensesTableViewController.h"
 #import "RequestData.h"
+#import "Utility.h"
+#import "Expense+CoreDataClass.h"
+#import "ExpenseTableViewCell.h"
 
-@interface ExpensesTableViewController ()
+@interface ExpensesTableViewController () {
+	NSMutableArray* _data;
+}
 
 @end
 
@@ -25,6 +30,16 @@
 	[req requestDataWithResource:@"groceries.json"];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	[self fetchData];
+}
+- (void)fetchData {
+	// Fetch data from persistent data store;
+	_data = [Utility dataForEntity:@"Expense" andSortKey:@"paid"];
+	[[self tableView] reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -37,18 +52,27 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+	return _data.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+	 static NSString *simpleTableIdentifier = @"ExpenseCell";
+	
+	ExpenseTableViewCell *cell = (ExpenseTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+	
+	if (cell == nil) {
+		NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ExpenseTableViewCell" owner:self options:nil];
+		cell = [nib objectAtIndex:0];
+	}
+	
+	Expense* expense = (Expense*)[_data objectAtIndex:indexPath.row];
+	cell.shopLabel.text = expense.shop;
+	cell.paidLabel.text = [NSString stringWithFormat:@"%f",expense.paid];
     
-    // Configure the cell...
-    
-    return cell;
+	return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
