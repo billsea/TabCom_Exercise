@@ -12,7 +12,7 @@
 
 @implementation RequestData
 
-- (void)requestMealDataWithResource:(NSString*)resourceName {
+- (void)requestDataWithResource:(NSString*)resourceName {
 	NSString* urlString = [NSString stringWithFormat:@"%@%@?format=json", BaseURLString, resourceName];
 	NSURL* dataUrl = [NSURL URLWithString:urlString];
 	
