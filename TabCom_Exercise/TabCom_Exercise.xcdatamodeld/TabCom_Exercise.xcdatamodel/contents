@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
-    <entity name="Meal" representedClassName="Meal" syncable="YES" codeGenerationType="class">
+    <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="paid" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="payment_type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="shop" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="menu_items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Menu_Items" inverseName="meal" inverseEntity="Menu_Items" syncable="YES"/>
+        <relationship name="expense_items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense_Items" inverseName="expense" inverseEntity="Expense_Items" syncable="YES"/>
     </entity>
-    <entity name="Menu_Items" representedClassName="Menu_Items" syncable="YES" codeGenerationType="class">
+    <entity name="Expense_Items" representedClassName="Expense_Items" syncable="YES" codeGenerationType="class">
         <attribute name="ean" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="meal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Meal" inverseName="menu_items" inverseEntity="Meal" syncable="YES"/>
+        <relationship name="expense" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Expense" inverseName="expense_items" inverseEntity="Expense" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Meal" positionX="-63" positionY="-18" width="128" height="118"/>
-        <element name="Menu_Items" positionX="-27" positionY="261" width="128" height="103"/>
+        <element name="Expense" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Expense_Items" positionX="-27" positionY="261" width="128" height="103"/>
     </elements>
 </model>
