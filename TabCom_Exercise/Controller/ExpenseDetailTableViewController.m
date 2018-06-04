@@ -1,28 +1,21 @@
 //
-//  ExpensesTableViewController.m
+//  ExpenseDetailTableViewController.m
 //  TabCom_Exercise
 //
 //  Created by Loud on 6/4/18.
 //  Copyright © 2018 Bill_Seaman. All rights reserved.
 //
 
-#import "ExpensesTableViewController.h"
-#import "RequestData.h"
+#import "ExpenseDetailTableViewController.h"
 
-@interface ExpensesTableViewController ()
+@interface ExpenseDetailTableViewController ()
 
 @end
 
-@implementation ExpensesTableViewController
+@implementation ExpenseDetailTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
-	self.title = NSLocalizedString(@"Expenses", nil);
-	
-	//Get Data
-	RequestData* req = [[RequestData alloc] init];
-	[req requestDataWithResource:@"groceries.json"];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A9957D8520C5D5CE00FB7C3F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9957D8420C5D5CE00FB7C3F /* AppDelegate.m */; };
-		A9957D8820C5D5CE00FB7C3F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9957D8720C5D5CE00FB7C3F /* ViewController.m */; };
 		A9957D8B20C5D5CE00FB7C3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9957D8920C5D5CE00FB7C3F /* Main.storyboard */; };
 		A9957D8E20C5D5CE00FB7C3F /* TabCom_Exercise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9957D8C20C5D5CE00FB7C3F /* TabCom_Exercise.xcdatamodeld */; };
 		A9957D9020C5D5CE00FB7C3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9957D8F20C5D5CE00FB7C3F /* Assets.xcassets */; };
@@ -20,6 +19,8 @@
 		A9982D3420C5E0A300307F48 /* Global.h in Resources */ = {isa = PBXBuildFile; fileRef = A9982D3320C5DF7200307F48 /* Global.h */; };
 		A9982D3A20C5E44400307F48 /* ExpensesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9982D3820C5E44400307F48 /* ExpensesTableViewController.m */; };
 		A9982D3B20C5E44400307F48 /* ExpensesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9982D3920C5E44400307F48 /* ExpensesTableViewController.xib */; };
+		A9982D3F20C5E56000307F48 /* ExpenseDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9982D3D20C5E56000307F48 /* ExpenseDetailTableViewController.m */; };
+		A9982D4020C5E56000307F48 /* ExpenseDetailTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9982D3E20C5E56000307F48 /* ExpenseDetailTableViewController.xib */; };
 		D4EE4ABA30C65BADEA5367AD /* libPods-TabCom_Exercise.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D7E01E1CE22D420884772F /* libPods-TabCom_Exercise.a */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +48,6 @@
 		A9957D8020C5D5CE00FB7C3F /* TabCom_Exercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabCom_Exercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9957D8320C5D5CE00FB7C3F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A9957D8420C5D5CE00FB7C3F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A9957D8620C5D5CE00FB7C3F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A9957D8720C5D5CE00FB7C3F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A9957D8A20C5D5CE00FB7C3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9957D8D20C5D5CE00FB7C3F /* TabCom_Exercise.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TabCom_Exercise.xcdatamodel; sourceTree = "<group>"; };
 		A9957D8F20C5D5CE00FB7C3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +66,9 @@
 		A9982D3720C5E44400307F48 /* ExpensesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpensesTableViewController.h; sourceTree = "<group>"; };
 		A9982D3820C5E44400307F48 /* ExpensesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExpensesTableViewController.m; sourceTree = "<group>"; };
 		A9982D3920C5E44400307F48 /* ExpensesTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpensesTableViewController.xib; sourceTree = "<group>"; };
+		A9982D3C20C5E56000307F48 /* ExpenseDetailTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpenseDetailTableViewController.h; sourceTree = "<group>"; };
+		A9982D3D20C5E56000307F48 /* ExpenseDetailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExpenseDetailTableViewController.m; sourceTree = "<group>"; };
+		A9982D3E20C5E56000307F48 /* ExpenseDetailTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseDetailTableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,13 +140,10 @@
 			isa = PBXGroup;
 			children = (
 				A9982D3620C5E41200307F48 /* View */,
-				A9982D3920C5E44400307F48 /* ExpensesTableViewController.xib */,
 				A9982D3520C5E3FC00307F48 /* Controller */,
 				A9982D2F20C5DEAD00307F48 /* Request */,
 				A9957D8320C5D5CE00FB7C3F /* AppDelegate.h */,
 				A9957D8420C5D5CE00FB7C3F /* AppDelegate.m */,
-				A9957D8620C5D5CE00FB7C3F /* ViewController.h */,
-				A9957D8720C5D5CE00FB7C3F /* ViewController.m */,
 				A9957D8920C5D5CE00FB7C3F /* Main.storyboard */,
 				A9957D8F20C5D5CE00FB7C3F /* Assets.xcassets */,
 				A9957D9120C5D5CE00FB7C3F /* LaunchScreen.storyboard */,
@@ -188,6 +187,8 @@
 			children = (
 				A9982D3720C5E44400307F48 /* ExpensesTableViewController.h */,
 				A9982D3820C5E44400307F48 /* ExpensesTableViewController.m */,
+				A9982D3C20C5E56000307F48 /* ExpenseDetailTableViewController.h */,
+				A9982D3D20C5E56000307F48 /* ExpenseDetailTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -195,8 +196,18 @@
 		A9982D3620C5E41200307F48 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A9982D4120C5E59800307F48 /* Cells */,
+				A9982D3920C5E44400307F48 /* ExpensesTableViewController.xib */,
+				A9982D3E20C5E56000307F48 /* ExpenseDetailTableViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A9982D4120C5E59800307F48 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +322,7 @@
 				A9957D9320C5D5CE00FB7C3F /* LaunchScreen.storyboard in Resources */,
 				A9957D9020C5D5CE00FB7C3F /* Assets.xcassets in Resources */,
 				A9957D8B20C5D5CE00FB7C3F /* Main.storyboard in Resources */,
+				A9982D4020C5E56000307F48 /* ExpenseDetailTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,9 +368,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9957D8820C5D5CE00FB7C3F /* ViewController.m in Sources */,
 				A9957D8E20C5D5CE00FB7C3F /* TabCom_Exercise.xcdatamodeld in Sources */,
 				A9957D9620C5D5CE00FB7C3F /* main.m in Sources */,
+				A9982D3F20C5E56000307F48 /* ExpenseDetailTableViewController.m in Sources */,
 				A9982D3220C5DEE500307F48 /* RequestData.m in Sources */,
 				A9982D3A20C5E44400307F48 /* ExpensesTableViewController.m in Sources */,
 				A9957D8520C5D5CE00FB7C3F /* AppDelegate.m in Sources */,
