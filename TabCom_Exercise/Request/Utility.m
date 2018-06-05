@@ -43,4 +43,18 @@
 	error = nil;
 	[context save:&error];
 }
+
++ (NSString *)formatNumber:(NSNumber *)number {
+	NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+	
+	[formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+	[formatter setMaximumFractionDigits:2];
+	[formatter setMinimumFractionDigits:2];
+	[formatter setRoundingMode:NSNumberFormatterRoundUp];
+	
+	NSString *numberString = [formatter stringFromNumber:number];
+	
+	return numberString;
+}
+
 @end

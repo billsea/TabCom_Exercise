@@ -11,4 +11,5 @@
 @interface Utility : NSObject
 + (NSMutableArray* )dataForEntity:(NSString*)entityString andSortKey:(NSString*)key;
 + (void)deleteAllObjectsForEntity:(NSString *)entityString;
++ (NSString *)formatNumber:(NSNumber *)number;
 @end

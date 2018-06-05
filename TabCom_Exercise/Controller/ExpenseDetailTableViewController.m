@@ -9,9 +9,13 @@
 #import "ExpenseDetailTableViewController.h"
 #import "ExpenseTableViewCell.h"
 #import "Expense_Items+CoreDataClass.h"
+#import "Total.h"
+#import "Utility.h"
+
+#define kTotalFontSize 24
 
 @interface ExpenseDetailTableViewController () {
-	NSArray* _data;
+	NSMutableArray* _data;
 }
 
 @end
@@ -22,7 +26,27 @@
     [super viewDidLoad];
 	self.title = _selectedExpense.shop;
 	
-	_data = [_selectedExpense.expense_items allObjects];
+	[self buildData];
+}
+
+- (void)buildData {
+	_data = [[_selectedExpense.expense_items allObjects] mutableCopy];
+	
+	Total* blankRow = [[Total alloc] init];
+	[_data addObject:blankRow];
+	
+	float expenseTotal = 0;
+	Total* totalExpense = [[Total alloc] init];
+	totalExpense.name = NSLocalizedString(@"Total:", nil);
+	
+	for(Expense_Items* ei in _selectedExpense.expense_items){
+		expenseTotal = expenseTotal + ei.price;
+	}
+	totalExpense.totalAmount = expenseTotal;
+	
+	[_data addObject:totalExpense];
+	
+	[self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,9 +61,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return _selectedExpense.expense_items.count;
+	return _data.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *simpleTableIdentifier = @"ExpenseCell";
@@ -51,10 +74,20 @@
 		cell = [nib objectAtIndex:0];
 	}
 	
-	Expense_Items* expense_item = (Expense_Items*)[_data objectAtIndex:indexPath.row];
-	cell.titleLabel.text = expense_item.name;
-	cell.amountLabel.text = [NSString stringWithFormat:@"%f",expense_item.price];
 	cell.statusImage.backgroundColor = [UIColor clearColor];
+	
+	if([[_data objectAtIndex:indexPath.row] isKindOfClass:[Expense_Items class]]){
+		Expense_Items* expense_item = (Expense_Items*)[_data objectAtIndex:indexPath.row];
+		cell.titleLabel.text = expense_item.name;
+		cell.amountLabel.text = [NSString stringWithFormat:@"%@",[Utility formatNumber: [NSNumber numberWithFloat:expense_item.price]]];
+	} else {
+		Total* total_amount = (Total*)[_data objectAtIndex:indexPath.row];
+		[cell.titleLabel setFont:[UIFont systemFontOfSize:kTotalFontSize weight:UIFontWeightRegular]];
+		cell.titleLabel.text = total_amount.name;
+		[cell.amountLabel setFont:[UIFont systemFontOfSize:kTotalFontSize weight:UIFontWeightRegular]];
+		cell.amountLabel.text = total_amount.totalAmount > 0 ? [NSString stringWithFormat:@"%@",[Utility formatNumber: [NSNumber numberWithFloat:total_amount.totalAmount]]] : @"";
+	}
+	
 	return cell;
 }
 

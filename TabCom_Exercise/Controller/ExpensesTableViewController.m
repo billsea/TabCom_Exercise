@@ -72,7 +72,7 @@
 	
 	Expense* expense = (Expense*)[_data objectAtIndex:indexPath.row];
 	cell.titleLabel.text = expense.shop;
-	cell.amountLabel.text = [NSString stringWithFormat:@"%f",expense.paid];
+	cell.amountLabel.text = [NSString stringWithFormat:@"%@",[Utility formatNumber: [NSNumber numberWithFloat:expense.paid]]];
 	
 	return cell;
 }

@@ -24,6 +24,7 @@
 		A9982D4420C5F7AD00307F48 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = A9982D4320C5F7AD00307F48 /* Utility.m */; };
 		A9982D4820C5FBB300307F48 /* ExpenseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9982D4620C5FBB300307F48 /* ExpenseTableViewCell.m */; };
 		A9982D4920C5FBB300307F48 /* ExpenseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9982D4720C5FBB300307F48 /* ExpenseTableViewCell.xib */; };
+		A9982D4D20C6219C00307F48 /* Total.m in Sources */ = {isa = PBXBuildFile; fileRef = A9982D4C20C6219C00307F48 /* Total.m */; };
 		D4EE4ABA30C65BADEA5367AD /* libPods-TabCom_Exercise.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D7E01E1CE22D420884772F /* libPods-TabCom_Exercise.a */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,8 @@
 		A9982D4520C5FBB300307F48 /* ExpenseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpenseTableViewCell.h; sourceTree = "<group>"; };
 		A9982D4620C5FBB300307F48 /* ExpenseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExpenseTableViewCell.m; sourceTree = "<group>"; };
 		A9982D4720C5FBB300307F48 /* ExpenseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseTableViewCell.xib; sourceTree = "<group>"; };
+		A9982D4B20C6219C00307F48 /* Total.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Total.h; sourceTree = "<group>"; };
+		A9982D4C20C6219C00307F48 /* Total.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Total.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,7 @@
 		A9957D8220C5D5CE00FB7C3F /* TabCom_Exercise */ = {
 			isa = PBXGroup;
 			children = (
+				A9982D4A20C6218300307F48 /* Classes */,
 				A9982D3620C5E41200307F48 /* View */,
 				A9982D3520C5E3FC00307F48 /* Controller */,
 				A9982D2F20C5DEAD00307F48 /* Request */,
@@ -221,6 +225,15 @@
 				A9982D4720C5FBB300307F48 /* ExpenseTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		A9982D4A20C6218300307F48 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A9982D4B20C6219C00307F48 /* Total.h */,
+				A9982D4C20C6219C00307F48 /* Total.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,6 +398,7 @@
 				A9957D8E20C5D5CE00FB7C3F /* TabCom_Exercise.xcdatamodeld in Sources */,
 				A9982D4420C5F7AD00307F48 /* Utility.m in Sources */,
 				A9957D9620C5D5CE00FB7C3F /* main.m in Sources */,
+				A9982D4D20C6219C00307F48 /* Total.m in Sources */,
 				A9982D3F20C5E56000307F48 /* ExpenseDetailTableViewController.m in Sources */,
 				A9982D4820C5FBB300307F48 /* ExpenseTableViewCell.m in Sources */,
 				A9982D3220C5DEE500307F48 /* RequestData.m in Sources */,
