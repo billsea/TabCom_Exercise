@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ExpenseTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *shopLabel;
-@property (weak, nonatomic) IBOutlet UILabel *paidLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *amountLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *statusImage;
 
 @end

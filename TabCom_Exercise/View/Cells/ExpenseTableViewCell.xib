@@ -42,9 +42,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
-                <outlet property="paidLabel" destination="Yhs-Vi-7ha" id="p4p-AN-f9H"/>
-                <outlet property="shopLabel" destination="wWJ-g0-RGH" id="yTL-s8-sDZ"/>
+                <outlet property="amountLabel" destination="Yhs-Vi-7ha" id="wGQ-rG-2ey"/>
                 <outlet property="statusImage" destination="HU2-Zd-Xfc" id="L1g-qB-89r"/>
+                <outlet property="titleLabel" destination="wWJ-g0-RGH" id="D4U-gK-Sbm"/>
             </connections>
         </tableViewCell>
     </objects>
