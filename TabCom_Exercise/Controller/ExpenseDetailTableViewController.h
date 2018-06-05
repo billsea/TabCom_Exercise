@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Expense+CoreDataClass.h"
 
 @interface ExpenseDetailTableViewController : UITableViewController
-
+@property(nonatomic) Expense* selectedExpense;
 @end

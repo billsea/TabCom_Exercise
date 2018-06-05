@@ -7,8 +7,12 @@
 //
 
 #import "ExpenseDetailTableViewController.h"
+#import "ExpenseTableViewCell.h"
+#import "Expense_Items+CoreDataClass.h"
 
-@interface ExpenseDetailTableViewController ()
+@interface ExpenseDetailTableViewController () {
+	NSArray* _data;
+}
 
 @end
 
@@ -16,6 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.title = _selectedExpense.shop;
+	
+	_data = [_selectedExpense.expense_items allObjects];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,18 +37,27 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+	return _selectedExpense.expense_items.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+	static NSString *simpleTableIdentifier = @"ExpenseCell";
+	
+	ExpenseTableViewCell *cell = (ExpenseTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+	
+	if (cell == nil) {
+		NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ExpenseTableViewCell" owner:self options:nil];
+		cell = [nib objectAtIndex:0];
+	}
+	
+	Expense_Items* expense_item = (Expense_Items*)[_data objectAtIndex:indexPath.row];
+	cell.titleLabel.text = expense_item.name;
+	cell.amountLabel.text = [NSString stringWithFormat:@"%f",expense_item.price];
+	cell.statusImage.backgroundColor = [UIColor clearColor];
+	return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
