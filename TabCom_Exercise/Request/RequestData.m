@@ -77,29 +77,28 @@
 				}
 				//set value
 				[expenseObject setValue:[self updateDataTypeWithValue:value andAttributes:attributes andAttribute:attribute] forKey:attribute];
-				
+		  }
+			
+			NSDictionary* expenseDetailItems = [item objectForKey:@"items"]; //TODO: this could be better
+			for(NSDictionary* itm in expenseDetailItems){
 				//Add expense items
 				NSManagedObject* itemObject = [NSEntityDescription insertNewObjectForEntityForName:@"Expense_Items" inManagedObjectContext:context];
 				Expense_Items* newExpenseItem = (Expense_Items*)itemObject;
 				
-				NSDictionary* expenseDetailItems = [item objectForKey:@"items"]; //TODO: this could be better
-				for(NSDictionary* itm in expenseDetailItems){
-					for (NSString *attributeItem in attributesItems) {
-						id value2 = [itm objectForKey:attributeItem];
-						if (value2 == nil) {
-							continue;
-						}
-						[itemObject setValue:[self updateDataTypeWithValue:value2 andAttributes:attributesItems andAttribute:attributeItem] forKey:attributeItem];
+				for (NSString *attributeItem in attributesItems) {
+					id valueDetail = [itm objectForKey:attributeItem];
+					if (valueDetail == nil) {
+						continue;
 					}
-					[expense addExpense_itemsObject:newExpenseItem];
+					[itemObject setValue:[self updateDataTypeWithValue:valueDetail andAttributes:attributesItems andAttribute:attributeItem] forKey:attributeItem];
 				}
-		}
-	
+				//add items object
+				[expense addExpense_itemsObject:newExpenseItem];
+			}
 	}
 	
 	[app saveContext];
 	
 	self.callback(true);
-	
 }
 @end
