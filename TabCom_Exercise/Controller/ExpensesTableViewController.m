@@ -72,11 +72,22 @@
 	
 	Expense* expense = (Expense*)[_data objectAtIndex:indexPath.row];
 	cell.titleLabel.text = expense.shop;
-	cell.amountLabel.text = [NSString stringWithFormat:@"%@",[Utility formatNumber: [NSNumber numberWithFloat:expense.paid]]];
+	cell.amountLabel.text = [NSString stringWithFormat:@"$%@",[Utility formatNumber: [NSNumber numberWithFloat:expense.paid]]];
+	
+	cell.statusImage.backgroundColor = [self statusColorWithValue:expense.paid];
 	
 	return cell;
 }
 
+- (UIColor*)statusColorWithValue:(float)value {
+	if(value < 25.0f){
+		return [UIColor greenColor];
+	} else if (value < 100) {
+		return [UIColor yellowColor];
+	} else {
+		return [UIColor redColor];
+	}
+}
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:

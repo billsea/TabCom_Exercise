@@ -79,13 +79,13 @@
 	if([[_data objectAtIndex:indexPath.row] isKindOfClass:[Expense_Items class]]){
 		Expense_Items* expense_item = (Expense_Items*)[_data objectAtIndex:indexPath.row];
 		cell.titleLabel.text = expense_item.name;
-		cell.amountLabel.text = [NSString stringWithFormat:@"%@",[Utility formatNumber: [NSNumber numberWithFloat:expense_item.price]]];
+		cell.amountLabel.text = [NSString stringWithFormat:@"$%@",[Utility formatNumber: [NSNumber numberWithFloat:expense_item.price]]];
 	} else {
 		Total* total_amount = (Total*)[_data objectAtIndex:indexPath.row];
 		[cell.titleLabel setFont:[UIFont systemFontOfSize:kTotalFontSize weight:UIFontWeightRegular]];
 		cell.titleLabel.text = total_amount.name;
 		[cell.amountLabel setFont:[UIFont systemFontOfSize:kTotalFontSize weight:UIFontWeightRegular]];
-		cell.amountLabel.text = total_amount.totalAmount > 0 ? [NSString stringWithFormat:@"%@",[Utility formatNumber: [NSNumber numberWithFloat:total_amount.totalAmount]]] : @"";
+		cell.amountLabel.text = total_amount.totalAmount > 0 ? [NSString stringWithFormat:@"$%@",[Utility formatNumber: [NSNumber numberWithFloat:total_amount.totalAmount]]] : @"";
 	}
 	
 	return cell;

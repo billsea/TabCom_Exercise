@@ -13,6 +13,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+	
+	_statusImage.layer.cornerRadius =_statusImage.frame.size.width / 2;
+	_statusImage.layer.masksToBounds = YES;
+	
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
