@@ -24,12 +24,12 @@
 	AFURLSessionManager* requestManager = [[AFURLSessionManager alloc] initWithSessionConfiguration:requestConfig];
 	NSURLRequest* urlRequest = [NSURLRequest requestWithURL:dataUrl];
 	
-	//TODO : Log download progress
 	NSURLSessionDataTask* dataRequestTask = [requestManager dataTaskWithRequest:urlRequest uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
 		if (error) {
-			NSLog(@"Error: %@", error);
+			//NSLog(@"Error: %@", error);
+			self.callback(false);
 		} else {
-			NSLog(@"%@ %@", response, responseObject);
+			//NSLog(@"%@ %@", response, responseObject);
 			[self parseResponse:responseObject];
 		}
 	}];

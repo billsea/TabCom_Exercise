@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Utility : NSObject
 + (NSMutableArray* )dataForEntity:(NSString*)entityString andSortKey:(NSString*)key;
 + (void)deleteAllObjectsForEntity:(NSString *)entityString;
 + (NSString *)formatNumber:(NSNumber *)number;
++ (void)showAlertWithTitle:(NSString *)message_title
+								andMessage:(NSString *)message
+										 andVC:(UIViewController *)vc;
 @end

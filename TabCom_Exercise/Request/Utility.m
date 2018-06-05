@@ -57,4 +57,23 @@
 	return numberString;
 }
 
++ (void)showAlertWithTitle:(NSString *)message_title
+								andMessage:(NSString *)message
+										 andVC:(UIViewController *)vc {
+	
+	UIAlertController *alert = [UIAlertController
+															alertControllerWithTitle:message_title
+															message:message
+															preferredStyle:UIAlertControllerStyleAlert];
+	
+	UIAlertAction *defaultAction =
+	[UIAlertAction actionWithTitle:NSLocalizedString(@"ok", nil)
+													 style:UIAlertActionStyleDefault
+												 handler:^(UIAlertAction *action){
+												 }];
+	
+	[alert addAction:defaultAction];
+	[vc presentViewController:alert animated:YES completion:nil];
+}
+
 @end

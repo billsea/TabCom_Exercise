@@ -34,7 +34,11 @@
 	RequestData* req = [[RequestData alloc] init];
 	[req requestDataWithResource:@"groceries.json"];
 	req.callback = ^(bool done){
-		[self fetchData];
+		if(done){
+			[self fetchData];
+		} else {
+				[Utility showAlertWithTitle:@"Request Error" andMessage:@"There was a problem with the data request, please check your internet connection" andVC:self];
+		}
 	};
 }
 
@@ -90,7 +94,6 @@
 }
 #pragma mark - Table view delegate
 
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	// Expense detail
 	ExpenseDetailTableViewController* expenseDetailTableViewController =
