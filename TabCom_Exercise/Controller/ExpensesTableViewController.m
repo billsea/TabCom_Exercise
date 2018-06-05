@@ -25,15 +25,18 @@
 	
 	self.title = NSLocalizedString(@"Expenses", nil);
 	
+	//clear old data
+	[Utility deleteAllObjectsForEntity:@"Expense"];
+	[Utility deleteAllObjectsForEntity:@"Expense_Items"];
+	
 	//Get Data
 	RequestData* req = [[RequestData alloc] init];
 	[req requestDataWithResource:@"groceries.json"];
+	req.callback = ^(bool done){
+		[self fetchData];
+	};
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
-	[self fetchData];
-}
 - (void)fetchData {
 	// Fetch data from persistent data store;
 	_data = [Utility dataForEntity:@"Expense" andSortKey:@"paid"];
@@ -69,6 +72,8 @@
 	Expense* expense = (Expense*)[_data objectAtIndex:indexPath.row];
 	cell.shopLabel.text = expense.shop;
 	cell.paidLabel.text = [NSString stringWithFormat:@"%f",expense.paid];
+	
+	NSArray* allitems = expense.expense_items.allObjects;
     
 	return cell;
 }

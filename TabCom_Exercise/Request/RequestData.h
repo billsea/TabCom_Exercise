@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface RequestData : NSObject
+@property void (^callback)(bool);
 - (void)requestDataWithResource:(NSString*)resourceName;
 @end

@@ -25,4 +25,22 @@
 	NSMutableArray* data = [[context executeFetchRequest:fetchRequest error:nil] mutableCopy];
 	return data;
 }
+
++ (void)deleteAllObjectsForEntity:(NSString *)entityString
+{
+	AppDelegate* app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+	NSManagedObjectContext* context = app.persistentContainer.viewContext;
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:entityString];
+	[fetchRequest setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+	
+	NSError *error;
+	NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+	for (NSManagedObject *object in fetchedObjects)
+	{
+		[context deleteObject:object];
+	}
+	
+	error = nil;
+	[context save:&error];
+}
 @end
